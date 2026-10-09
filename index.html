@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#182b19">
+<meta name="description" content="Minecraft мифы — легенды, странные места, мобы и загадки кубического мира.">
+<title>Minecraft мифы — тайны кубического мира</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500;700;900&display=swap');
+:root{--green:#59c436;--green2:#2d8b27;--dark:#101610;--panel:#1b241b;--panel2:#242f23;--line:#394b35;--text:#f1f5eb;--muted:#bdcbb6;--gold:#f1c84b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#111711;color:var(--text);font-family:Roboto,Arial,sans-serif;background-image:linear-gradient(#101710ee,#101710f5),repeating-linear-gradient(0deg,transparent 0 31px,#ffffff05 32px),repeating-linear-gradient(90deg,transparent 0 31px,#ffffff05 32px)}
+button,input{font:inherit}button,a{cursor:pointer}a{color:inherit;text-decoration:none}
+.topbar{position:sticky;top:0;z-index:10;background:#182418;border-bottom:4px solid #0b100b;box-shadow:0 4px 0 #293a24;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px max(18px,calc((100% - 1200px)/2))}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Press Start 2P',monospace;font-size:clamp(11px,1.7vw,19px);line-height:1.7;text-shadow:3px 3px #000}.grass{width:34px;height:34px;flex:none;background:linear-gradient(#64cf3b 0 30%,#82532c 30%);border:3px solid #101710;box-shadow:inset -5px -5px #0003,3px 3px #000}
+.brand span{color:#69df43}.nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.nav button,.pixel-btn{border:0;background:#3b7730;color:white;padding:11px 14px;font-weight:900;box-shadow:inset -4px -4px #0003,inset 3px 3px #ffffff20;border:2px solid #101710}.nav button:hover,.pixel-btn:hover{background:#4b9d36;transform:translateY(-1px)}
+.hero{max-width:1200px;margin:24px auto 0;padding:38px 24px;min-height:300px;position:relative;overflow:hidden;background:linear-gradient(180deg,#173e5c 0%,#326f8a 48%,#365b2d 49%,#263e20 100%);border:4px solid #0a100a;box-shadow:8px 8px #0006;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero:before{content:"";position:absolute;inset:0;opacity:.65;background:linear-gradient(135deg,transparent 60%,#122010 60%),repeating-linear-gradient(90deg,transparent 0 56px,#09140b66 57px 64px),repeating-linear-gradient(0deg,transparent 0 56px,#09140b55 57px 64px);pointer-events:none}
+.pixel-sun{position:absolute;right:12%;top:22px;width:55px;height:55px;background:#fff3a1;box-shadow:0 0 35px #fff5a1;image-rendering:pixelated}
+.hero h1{position:relative;margin:0 0 18px;font-family:'Press Start 2P',monospace;font-size:clamp(22px,5vw,48px);line-height:1.5;color:#fff;text-shadow:5px 5px #242424,8px 8px #000;max-width:900px}
+.hero h1 em{font-style:normal;color:#73ef4e}.hero p{position:relative;font-size:clamp(15px,2vw,19px);line-height:1.6;font-weight:700;max-width:640px;text-shadow:2px 2px #172216;margin:0 0 20px}.hero .pixel-btn{position:relative;background:#5c9e32;padding:14px 20px}
+.mob{position:absolute;bottom:0;font-size:clamp(48px,9vw,90px);filter:drop-shadow(4px 5px #0006)}.mob.left{left:4%}.mob.right{right:5%}
+main{max-width:1200px;margin:32px auto;padding:0 18px 44px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;margin-bottom:18px}.section-head h2{font-family:'Press Start 2P',monospace;font-size:clamp(15px,2.5vw,23px);line-height:1.7;margin:0}.section-head p{color:var(--muted);margin:5px 0 0}
+.controls{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 22px}.search{flex:1;min-width:220px;background:#1b241b;color:white;border:3px solid #40543a;padding:13px 15px;outline:none;box-shadow:inset 3px 3px #0005}.search:focus{border-color:var(--green)}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{background:#273426;color:#dce9d5;border:2px solid #40523b;padding:10px 12px;font-weight:700}.filter.active,.filter:hover{background:#4a8d31;border-color:#8ee56c;color:white}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:22px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:linear-gradient(145deg,#222e21,#151d15);border:3px solid #080d08;box-shadow:inset 0 0 0 1px #42543b,5px 5px #0005;min-width:0;transition:transform .15s,border-color .15s;display:flex;flex-direction:column}.card:hover{transform:translateY(-4px);border-color:#76c94a}.art{height:155px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border-bottom:3px solid #090e09;background:#183149}.art:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 23px,#0002 24px 25px),repeating-linear-gradient(90deg,transparent 0 23px,#0002 24px 25px)}
+.art .emoji{position:relative;font-size:76px;filter:drop-shadow(6px 6px #0008);image-rendering:pixelated}.art .label{position:absolute;bottom:9px;left:9px;background:#0b100bd9;border:1px solid #91b07d;padding:5px 8px;font-size:11px;font-weight:900;letter-spacing:.5px}
+.art.herobrine{background:radial-gradient(circle at 50% 35%,#41638a,#101c30 55%,#080e16)}.art.city{background:linear-gradient(#08799a,#03506d 55%,#153e46)}.art.warden{background:radial-gradient(circle,#147d70,#092322 60%,#07110f)}.art.ghast{background:linear-gradient(#e34a27,#6c1715 65%,#21100d)}.art.island{background:linear-gradient(#76c6f5 0 55%,#79a94c 56%,#426d35)}.art.house{background:linear-gradient(#071a2d,#182e31 65%,#1c2818)}.art.portal{background:linear-gradient(120deg,#131018,#542f6c,#171226)}.art.skeleton{background:linear-gradient(#2d415b,#111a27 75%,#1b271a)}.card-body{padding:14px;display:flex;flex-direction:column;gap:9px;flex:1}.tag{align-self:flex-start;background:#2e5425;color:#c9ffb6;padding:5px 8px;font-size:11px;font-weight:900;border:1px solid #65914c}.card h3{font-size:17px;line-height:1.35;margin:0}.card p{color:#c2cfbd;line-height:1.55;font-size:14px;margin:0;flex:1}.meta{display:flex;justify-content:space-between;gap:8px;color:#9faf98;font-size:12px;border-top:1px solid #354331;padding-top:10px}.read{margin-top:4px;width:100%;background:#31492b;color:#eaf8e4;border:2px solid #526b46;padding:9px;font-weight:900;text-align:left}.read:hover{background:#4b7b37}
+.sidebar{display:flex;flex-direction:column;gap:15px}.sidebox{background:#1b241b;border:3px solid #080d08;box-shadow:inset 0 0 0 1px #40523a;padding:16px}.sidebox h3{margin:0 0 14px;font-family:'Press Start 2P',monospace;font-size:12px;line-height:1.8}.category-list{display:flex;flex-direction:column;gap:8px}.category-list button{display:flex;justify-content:space-between;gap:8px;align-items:center;text-align:left;background:transparent;border:0;color:#dce8d5;padding:7px 4px}.category-list button:hover{color:#8ee56c}.count{color:#c6eab7;background:#2d3c29;padding:3px 7px;font-size:12px}.popular-item{display:flex;gap:10px;align-items:center;margin:12px 0;font-size:13px;line-height:1.4}.mini{width:48px;height:43px;flex:none;display:grid;place-items:center;background:#304b35;border:2px solid #070d07;font-size:24px}.notice{background:#293e24;border:3px solid #5d8f43;padding:15px;line-height:1.55;font-size:14px}.notice b{display:block;color:#a5f185;margin-bottom:5px}
+.empty{display:none;text-align:center;padding:40px 10px;color:var(--muted);border:2px dashed #42523b}.footer{border-top:4px solid #090e09;background:#172117;padding:22px 18px;text-align:center;color:#9eae96;font-size:12px;line-height:1.8}.footer strong{color:#c6efb2}
+.modal{position:fixed;inset:0;background:#000c;z-index:30;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modal-panel{background:#1b261a;border:4px solid #659b4d;box-shadow:8px 8px #0008;max-width:720px;width:100%;max-height:90vh;overflow:auto;padding:22px}.modal-top{display:flex;justify-content:space-between;gap:15px;align-items:start}.modal h2{font-family:'Press Start 2P',monospace;font-size:17px;line-height:1.7;margin:0 0 14px}.close{background:#7d2929;color:white;border:2px solid #111;padding:7px 12px;font-weight:900}.modal-art{height:190px;margin:12px 0 18px}.modal-copy{color:#d5e0ce;line-height:1.8}.truth{padding:12px;background:#293e24;border-left:5px solid #77c64b;line-height:1.6;margin-top:16px}.no-results{padding:30px;text-align:center;color:var(--muted)}
+@media(max-width:950px){.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{margin:16px 12px 0}}
+@media(max-width:600px){.topbar{padding:10px 12px;align-items:flex-start;flex-direction:column}.nav{width:100%}.nav button{flex:1;padding:9px 7px;font-size:12px}.hero{min-height:270px;padding:32px 14px}.mob{opacity:.55}.pixel-sun{right:7%;width:35px;height:35px}.cards{grid-template-columns:1fr}.art{height:180px}.sidebar{grid-template-columns:1fr}.section-head h2{font-size:14px}main{padding:0 12px 30px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="Minecraft мифы — главная"><i class="grass"></i><div>MINECRAFT <span>МИФЫ</span></div></a>
+  <nav class="nav" aria-label="Главная навигация">
+    <button onclick="resetFilters()">Главная</button><button onclick="document.querySelector('#myths').scrollIntoView({behavior:'smooth'})">Все мифы</button><button onclick="document.querySelector('#categories').scrollIntoView({behavior:'smooth'})">Категории</button>
+  </nav>
+</header>
+<section class="hero">
+  <div class="pixel-sun"></div><div class="mob left">🧟</div><div class="mob right">👾</div>
+  <h1>MINECRAFT<br><em>МИФЫ</em></h1>
+  <p>Странные легенды, загадочные места и тайны кубического мира.<br>Готов проверить, где правда, а где выдумка?</p>
+  <button class="pixel-btn" onclick="document.querySelector('#myths').scrollIntoView({behavior:'smooth'})">⛏ ИССЛЕДОВАТЬ МИФЫ</button>
+</section>
+<main id="myths">
+  <div class="section-head"><div><h2>▣ Последние мифы</h2><p>Выбирай легенду и узнай, что скрывается за ней.</p></div><span id="resultCount">8 мифов</span></div>
+  <div class="controls"><input id="search" class="search" type="search" placeholder="🔎 Поиск мифов..." aria-label="Поиск мифов"><div class="filters" id="filters"></div></div>
+  <div class="layout">
+    <section><div class="cards" id="cards"></div><div class="empty" id="empty">🧭 Ничего не найдено. Попробуй другой запрос или категорию.</div></section>
+    <aside class="sidebar">
+      <div class="sidebox" id="categories"><h3>🟩 Категории</h3><div class="category-list" id="categoryList"></div></div>
+      <div class="sidebox"><h3>🔥 Популярные мифы</h3><div id="popular"></div></div>
+      <div class="notice"><b>📦 Знаешь другой миф?</b>Есть теория или загадка? Расскажи друзьям и предложи добавить её в следующую версию сайта!</div>
+    </aside>
+  </div>
+</main>
+<footer class="footer"><strong>▰ MINECRAFT МИФЫ</strong><br>Фанатский сайт о легендах и загадках Minecraft.<br>Неофициальный проект, не связан с Mojang или Microsoft.</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><article class="modal-panel"><div class="modal-top"><div><div id="modalTag" class="tag"></div><h2 id="modalTitle"></h2></div><button class="close" onclick="closeModal()" aria-label="Закрыть">✕</button></div><div id="modalArt"></div><div id="modalCopy" class="modal-copy"></div><div id="truth" class="truth"></div></article></div>
+<script>
+const myths = [
+{id:1,title:"Херобрин — правда или всего лишь миф?",category:"Легенды",emoji:"👁️",art:"herobrine",date:"10 мая 2025",time:"5 мин",short:"Белые глаза в темноте, странные туннели и загадочные постройки. Откуда появилась самая известная легенда Minecraft?",body:"Херобрин — легендарный персонаж из фанатских историй Minecraft. Его обычно изображают похожим на Стива, но с полностью белыми глазами. Игроки рассказывали о странных сооружениях и силуэте, который будто наблюдал издалека. Истории быстро разошлись по форумам и видео.",truth:"Что известно: Херобрин не является обычным мобом в официальной версии игры. Это интернет-легенда, которую поддерживали фанатские истории, моды и постановочные видео. Но проверить собственный мир на странности всё равно весело!"},
+{id:2,title:"Затонувшие древние города",category:"Странные места",emoji:"🏛️",art:"city",date:"8 мая 2025",time:"4 мин",short:"Под толщей воды можно найти руины и необычные постройки. Кто их создал и что они скрывают?",body:"В океанах Minecraft встречаются руины, кораблекрушения и другие структуры. Они создают ощущение, будто под водой когда-то кипела жизнь. А в глубокой темноте можно найти Древний город — огромную структуру в глубинном тёмном биоме.",truth:"Это реальные структуры генерации мира, а не тайные города неизвестной цивилизации. Древние города особенно опасны из-за скалка и Варденa, поэтому исследуй их осторожно."},
+{id:3,title:"Варден — самый опасный моб?",category:"Монстры",emoji:"👹",art:"warden",date:"6 мая 2025",time:"6 мин",short:"Он почти не полагается на зрение, но отлично реагирует на звуки. Можно ли пройти мимо него незамеченным?",body:"Варден обитает в глубинной темноте. Он реагирует на вибрации и запах, а не просто бегает за игроком как обычный монстр. Если слишком шуметь рядом со скалк-крикунами, исследование может закончиться очень быстро.",truth:"Варден — настоящий моб Minecraft, добавленный в официальную игру. Он создан как угроза, которую лучше избегать, а не побеждать в лоб. Тишина и осторожность — твои лучшие помощники."},
+{id:4,title:"Гасты плачут в Незере?",category:"Монстры",emoji:"👻",art:"ghast",date:"3 мая 2025",time:"4 мин",short:"Большие белые существа из Незера выглядят грустными. Но действительно ли они плачут?",body:"Гаст издаёт необычные звуки, похожие на жалобные стоны, и выпускает огненные шары. Из-за его внешнего вида игроки часто придумывают истории о том, что он потерялся или тоскует по дому.",truth:"Звуки Гаста — часть игрового дизайна и атмосферы. Официального подтверждения, что Гасты грустят или плачут по сюжету, нет. А вот фанатские теории об их происхождении продолжают появляться."},
+{id:5,title:"Плавающие острова — это нормально?",category:"Генерация мира",emoji:"🏝️",art:"island",date:"1 мая 2025",time:"5 мин",short:"Иногда кусок земли висит высоко в небе. Ошибка генерации или секретный биом?",body:"В мире Minecraft можно увидеть парящие куски земли, нависающие скалы и необычные пещеры. Они выглядят как острова, оторвавшиеся от остальной карты, особенно если вокруг нет высоких гор.",truth:"Такие формы рельефа могут появляться из-за процедурной генерации мира. Это не обязательно ошибка или скрытая локация — иногда алгоритм просто создаёт необычный ландшафт."},
+{id:6,title:"Тот самый дом в лесу",category:"Страшные истории",emoji:"🏚️",art:"house",date:"28 апреля 2025",time:"6 мин",short:"Ты заметил среди деревьев дом, которого раньше не было? Возможно, это обычная структура…",body:"Тёмный лес, туман и одинокий дом — идеальная основа для страшной истории. Игроки любят рассказывать о хижинах, которые будто возникают из ниоткуда, или о постройках, найденных далеко от базы.",truth:"В Minecraft действительно есть лесные особняки и другие генерируемые структуры. Но история о доме, который сам появляется и следит за игроком, относится к фанатским страшилкам, если нет доказательств обратного."},
+{id:7,title:"Таинственные порталы",category:"Интересные факты",emoji:"🟪",art:"portal",date:"24 апреля 2025",time:"3 мин",short:"Фиолетовое мерцание портала вдохновило множество теорий о других измерениях и секретных мирах.",body:"Портал в Незер — одна из самых узнаваемых конструкций Minecraft. Игроки часто придумывают секретные комбинации блоков, которые якобы открывают неизвестные измерения.",truth:"Обычный портал в Незер работает по известным игровым правилам. Большинство историй о секретных измерениях через случайные блоки — выдумки или модификации. Необычные порталы из роликов часто сделаны с помощью модов."},
+{id:8,title:"Скелет-наездник появляется случайно?",category:"Генерация мира",emoji:"🏹",art:"skeleton",date:"20 апреля 2025",time:"4 мин",short:"Гроза может принести неожиданную встречу: лошадь-ловушка и скелеты-всадники.",body:"Во время грозы иногда появляется скелетная лошадь-ловушка. Когда игрок подходит достаточно близко, событие активируется и могут появиться скелеты-всадники. Необычная встреча легко кажется редким знаком.",truth:"Это реальная игровая механика, а не миф. Событие встречается не каждый день, поэтому многие игроки впервые видят его случайно и принимают за секрет."}
+];
+const categories=["Все мифы",...new Set(myths.map(m=>m.category))];
+let active="Все мифы",query="";
+const $=s=>document.querySelector(s);
+function safe(s){return s.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;")}
+function renderFilters(){
+ $("#filters").innerHTML=categories.map(c=>`<button class="filter ${c===active?"active":""}" data-category="${safe(c)}">${c}</button>`).join("");
+ $("#categoryList").innerHTML=categories.map(c=>`<button data-category="${safe(c)}"><span>${c==="Все мифы"?"🟩":"▪"} ${c}</span><span class="count">${c==="Все мифы"?myths.length:myths.filter(m=>m.category===c).length}</span></button>`).join("");
+ document.querySelectorAll("[data-category]").forEach(b=>b.addEventListener("click",()=>{active=b.dataset.category;renderFilters();renderCards();$("#myths").scrollIntoView({behavior:"smooth"});}));
+}
+function renderCards(){
+ const filtered=myths.filter(m=>(active==="Все мифы"||m.category===active)&&(`${m.title} ${m.category} ${m.short} ${m.body}`.toLowerCase().includes(query.toLowerCase())));
+ $("#cards").innerHTML=filtered.map(m=>`<article class="card"><div class="art ${m.art}"><span class="emoji">${m.emoji}</span><span class="label">МИФ #${String(m.id).padStart(2,"0")}</span></div><div class="card-body"><span class="tag">${safe(m.category)}</span><h3>${safe(m.title)}</h3><p>${safe(m.short)}</p><div class="meta"><span>▣ ${m.date}</span><span>◷ ${m.time}</span></div><button class="read" data-open="${m.id}">Читать миф →</button></div></article>`).join("");
+ $("#resultCount").textContent=`${filtered.length} ${filtered.length===1?"миф":filtered.length<5?"мифа":"мифов"}`;
+ $("#empty").style.display=filtered.length?"none":"block";
+ document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>openModal(Number(b.dataset.open))));
+}
+function renderPopular(){
+ $("#popular").innerHTML=[myths[0],myths[2],myths[1],myths[4],myths[5]].map((m,i)=>`<a href="#" class="popular-item" data-pop="${m.id}"><span>${i+1}.</span><span class="mini">${m.emoji}</span><span>${safe(m.title)}</span></a>`).join("");
+ document.querySelectorAll("[data-pop]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();openModal(Number(a.dataset.pop));}));
+}
+function openModal(id){
+ const m=myths.find(x=>x.id===id);if(!m)return;
+ $("#modalTag").textContent=m.category;$("#modalTitle").textContent=m.title;
+ $("#modalArt").className=`art modal-art ${m.art}`;$("#modalArt").innerHTML=`<span class="emoji">${m.emoji}</span><span class="label">МИФ #${String(m.id).padStart(2,"0")}</span>`;
+ $("#modalCopy").innerHTML=`<p>${safe(m.body)}</p><p>${safe(m.short)}</p>`;
+ $("#truth").innerHTML=`<strong>🧪 Правда или выдумка?</strong><br>${safe(m.truth)}`;
+ $("#modal").classList.add("open");document.body.style.overflow="hidden";$(".close").focus();
+}
+function closeModal(){$("#modal").classList.remove("open");document.body.style.overflow="";}
+function resetFilters(){active="Все мифы";query="";$("#search").value="";renderFilters();renderCards();window.scrollTo({top:0,behavior:"smooth"});}
+$("#search").addEventListener("input",e=>{query=e.target.value;renderCards()});
+$("#modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+renderFilters();renderCards();renderPopular();
+</script>
+</body>
+</html>
